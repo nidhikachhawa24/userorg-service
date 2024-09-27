@@ -83,22 +83,26 @@ public final class OTPUtil {
     }
     Map<String, String> smsTemplate = new HashMap<>();
     String templateId = (String) otpMap.get(JsonKey.TEMPLATE_ID);
-    smsTemplate.put(JsonKey.OTP, (String) otpMap.get(JsonKey.OTP));
+    // smsTemplate.put(JsonKey.OTP, (String) otpMap.get(JsonKey.OTP));
+    smsTemplate.put("var1", (String) otpMap.get(JsonKey.OTP));
+
     smsTemplate.put(
         JsonKey.OTP_EXPIRATION_IN_MINUTES, (String) otpMap.get(JsonKey.OTP_EXPIRATION_IN_MINUTES));
     smsTemplate.put(
         JsonKey.INSTALLATION_NAME,
         ProjectUtil.getConfigValue(JsonKey.SUNBIRD_INSTALLATION_DISPLAY_NAME));
     String sms = "";
-    if (StringUtils.isBlank(templateId)) {
-      sms = otpService.getSmsBody(JsonKey.VERIFY_PHONE_OTP_TEMPLATE, smsTemplate, context);
-    } else if (StringUtils.equals(JsonKey.WARD_LOGIN_OTP_TEMPLATE_ID, templateId)) {
-      sms = otpService.getSmsBody(JsonKey.OTP_PHONE_WARD_LOGIN_TEMPLATE, smsTemplate, context);
-    } else if (StringUtils.equals(JsonKey.RESET_PASSWORD_TEMPLATE_ID, templateId)) {
-      sms = otpService.getSmsBody(JsonKey.OTP_PHONE_RESET_PASSWORD_TEMPLATE, smsTemplate, context);
-    } else if (StringUtils.equals(JsonKey.CONTACT_UPDATE_TEMPLATE_ID, templateId)) {
-      sms = otpService.getSmsBody(JsonKey.OTP_CONTACT_UPDATE_TEMPLATE_SMS, smsTemplate, context);
-    }
+    // if (StringUtils.isBlank(templateId)) {
+    //   sms = otpService.getSmsBody(JsonKey.VERIFY_PHONE_OTP_TEMPLATE, smsTemplate, context);
+    // } else if (StringUtils.equals(JsonKey.WARD_LOGIN_OTP_TEMPLATE_ID, templateId)) {
+    //   sms = otpService.getSmsBody(JsonKey.OTP_PHONE_WARD_LOGIN_TEMPLATE, smsTemplate, context);
+    // } else if (StringUtils.equals(JsonKey.RESET_PASSWORD_TEMPLATE_ID, templateId)) {
+    //   sms = otpService.getSmsBody(JsonKey.OTP_PHONE_RESET_PASSWORD_TEMPLATE, smsTemplate, context);
+    // } else if (StringUtils.equals(JsonKey.CONTACT_UPDATE_TEMPLATE_ID, templateId)) {
+    //   sms = otpService.getSmsBody(JsonKey.OTP_CONTACT_UPDATE_TEMPLATE_SMS, smsTemplate, context);
+    // }
+    sms = "OTP to verify your mobile number for Shikshagraha is var1. This OTP is valid for 30 minutes. -Powered by Tekdi Technologies";
+
     logger.debug(context, "OTPUtil:sendOTPViaSMS: SMS text = " + sms);
 
     String countryCode;

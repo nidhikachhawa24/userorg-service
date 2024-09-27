@@ -339,7 +339,7 @@ public class Msg91SmsProvider implements ISmsProvider {
   @Override
   public boolean send(List<String> phoneNumber, String smsText, RequestContext context) {
     List<String> phoneNumberList = null;
-    logger.debug(context, "Msg91SmsProvider@Sending " + smsText + "  to mobileNumber ");
+    logger.debug(context, "Msg91SmsProvider@Sending " + "OTP to verify your mobile number for Shikshagraha is var1 . This OTP is valid for 30 minutes. -Powered by Tekdi Technologies" + "  to mobileNumber ");
     logger.debug(
         context,
         "Msg91SmsProvider@SMS Provider parameters \n"
@@ -376,7 +376,8 @@ public class Msg91SmsProvider implements ISmsProvider {
 
       String path = null;
       // add dlt template id header
-      String templateId = getTemplateId(smsText, MSG_91_PROVIDER);
+      // String templateId = getTemplateId(smsText, MSG_91_PROVIDER);
+      String templateId = "66d6b411d6fc0561bd765862";
       if (StringUtils.isBlank(templateId)) {
         logger.info(context, "dlt template id is empty for sms : " + smsText);
       }
