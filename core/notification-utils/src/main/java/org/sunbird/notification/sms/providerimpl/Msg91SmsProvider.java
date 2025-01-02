@@ -87,7 +87,7 @@ public class Msg91SmsProvider implements ISmsProvider {
   private boolean sendSmsUsingPost(String mobileNumber, String smsText, RequestContext context) {
     logger.debug(
         context, "Msg91SmsProvider@Sending " + smsText + "  to mobileNumber " + mobileNumber);
-    logger.debug(
+    logger.info(
         context,
         "Msg91SmsProvider@SMS Provider parameters \n"
             + "Gateway - "
@@ -118,7 +118,7 @@ public class Msg91SmsProvider implements ISmsProvider {
       if (validateSettings(mobileNumber, smsText)) {
         String tempMobileNumber = removePlusFromMobileNumber(mobileNumber);
 
-        logger.debug(
+        logger.info(
             context, "Msg91SmsProvider - after removePlusFromMobileNumber " + tempMobileNumber);
         // add dlt template id header
         String templateId = getTemplateId(smsText, MSG_91_PROVIDER);
@@ -126,7 +126,7 @@ public class Msg91SmsProvider implements ISmsProvider {
           logger.info(context, "dlt template id is empty for sms : " + smsText);
         }
         path = baseUrl + postUrl;
-        logger.debug(context, "Msg91SmsProvider -Executing request - " + path);
+        logger.info(context, "Msg91SmsProvider -Executing request - " + path);
 
         HttpPost httpPost = new HttpPost(path);
 
@@ -135,7 +135,7 @@ public class Msg91SmsProvider implements ISmsProvider {
 
         // add authkey header
         httpPost.setHeader("authkey", authKey);
-        logger.debug(context, "Msg91SmsProvider -request header- " + httpPost.getAllHeaders());
+        logger.info(context, "Msg91SmsProvider -request header- " + httpPost.getAllHeaders());
 
         List<String> mobileNumbers = new ArrayList<>();
         mobileNumbers.add(tempMobileNumber);
@@ -151,7 +151,7 @@ public class Msg91SmsProvider implements ISmsProvider {
             new ProviderDetails(sender, smsRoute, country, 1, smsList, templateId);
         String providerDetailsString = JsonUtil.toJson(providerDetails, context);
         providerDetailsString = providerDetailsString.replaceAll("dlt_TE_ID", "DLT_TE_ID");
-
+        logger.info(context, "providerDetailsString ----" + providerDetailsString);
         if (!JsonUtil.isStringNullOREmpty(providerDetailsString)) {
           logger.debug(context, "Msg91SmsProvider - Body - " + providerDetailsString);
 
