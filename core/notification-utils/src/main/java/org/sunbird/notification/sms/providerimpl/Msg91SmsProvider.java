@@ -121,14 +121,11 @@ public class Msg91SmsProvider implements ISmsProvider {
         logger.info(
             context, "Msg91SmsProvider - after removePlusFromMobileNumber " + tempMobileNumber);
         // add dlt template id header
-        String templateId = "1707172526228971090";
+        String templateId = getTemplateId(smsText, MSG_91_PROVIDER);
+        if (StringUtils.isBlank(templateId)) {
+          logger.info(context, "dlt template id is empty for sms : " + smsText);
+        }
         logger.info(context, "Template id is set to - " + templateId);
-
-
-        // String templateId = getTemplateId(smsText, MSG_91_PROVIDER);
-        // if (StringUtils.isBlank(templateId)) {
-        //   logger.info(context, "dlt template id is empty for sms : " + smsText);
-        // }
         path = baseUrl + postUrl;
         logger.info(context, "Msg91SmsProvider -Executing request - " + path);
 
