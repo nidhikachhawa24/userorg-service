@@ -92,7 +92,7 @@ public class Msg91PostMethodTest {
         "OTP to verify your phone number on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
         "1");
     template1.put(
-        "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
+        "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies",
         "2");
     template1.put(
         "Your ward has requested for registration on $installationName using this phone number. Use OTP $otp to agree and create the account. This is valid for $otpExpiryInMinutes minutes only.",
@@ -101,7 +101,7 @@ public class Msg91PostMethodTest {
     when(SmsTemplateUtil.getSmsTemplateConfigMap()).thenReturn(template);
     ISmsProvider megObj = SMSFactory.getInstance();
     String sms =
-        "OTP to reset your password on instance is 456123. This is valid for 30 minutes only.";
+        "OTP to verify your mobile number for Shikshagraha is 456123. This OTP is valid for 30 minutes. -Powered by Tekdi Technologies";
     boolean response = megObj.send("4321111111", sms, new RequestContext());
     Assert.assertTrue(response);
   }
@@ -116,7 +116,7 @@ public class Msg91PostMethodTest {
         "OTP to verify your phone number on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
         "1");
     template1.put(
-        "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
+        "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies",
         "2");
     template1.put(
         "Your ward has requested for registration on $installationName using this phone number. Use OTP $otp to agree and create the account. This is valid for $otpExpiryInMinutes minutes only.",
@@ -140,7 +140,7 @@ public class Msg91PostMethodTest {
         "OTP to verify your phone number on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
         "1");
     template1.put(
-        "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
+        "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies",
         "2");
     template1.put(
         "Your ward has requested for registration on $installationName using this phone number. Use OTP $otp to agree and create the account. This is valid for $otpExpiryInMinutes minutes only.",
@@ -167,7 +167,7 @@ public class Msg91PostMethodTest {
         "OTP to verify your phone number on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
         "1");
     template1.put(
-        "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
+        "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies",
         "2");
     template1.put(
         "Your ward has requested for registration on $installationName using this phone number. Use OTP $otp to agree and create the account. This is valid for $otpExpiryInMinutes minutes only.",
@@ -194,7 +194,7 @@ public class Msg91PostMethodTest {
         "OTP to verify your phone number on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
         "1");
     template1.put(
-        "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
+        "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies",
         "2");
     template1.put(
         "Your ward has requested for registration on $installationName using this phone number. Use OTP $otp to agree and create the account. This is valid for $otpExpiryInMinutes minutes only.",
@@ -218,7 +218,7 @@ public class Msg91PostMethodTest {
         "OTP to verify your phone number on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
         "1");
     template1.put(
-        "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.",
+        "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies",
         "2");
     template1.put(
         "Your ward has requested for registration on $installationName using this phone number. Use OTP $otp to agree and create the account. This is valid for $otpExpiryInMinutes minutes only.",
