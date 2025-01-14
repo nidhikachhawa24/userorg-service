@@ -108,7 +108,7 @@ public class SendOTPActorTest {
     request = createOtpRequest("phone", "anyMobileNum", "anyUserId");
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
@@ -120,7 +120,7 @@ public class SendOTPActorTest {
     request.getRequest().remove(JsonKey.TYPE);
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
@@ -132,7 +132,7 @@ public class SendOTPActorTest {
     request.getRequest().put(JsonKey.TYPE, JsonKey.PREV_USED_PHONE);
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
@@ -144,7 +144,7 @@ public class SendOTPActorTest {
     request.getRequest().put(JsonKey.TYPE, JsonKey.RECOVERY_PHONE);
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
@@ -156,7 +156,7 @@ public class SendOTPActorTest {
     request.getRequest().put(JsonKey.TYPE, JsonKey.PREV_USED_EMAIL);
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
@@ -168,7 +168,7 @@ public class SendOTPActorTest {
     request.getRequest().put(JsonKey.TYPE, JsonKey.RECOVERY_EMAIL);
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
@@ -179,7 +179,7 @@ public class SendOTPActorTest {
     request = createOtpRequest("email", "anyEmailId", "anyUserId");
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
@@ -190,7 +190,7 @@ public class SendOTPActorTest {
     request = createOtpRequest("email", "anyEmailId", "");
     when(emailTemplateDao.getTemplate(Mockito.anyString(), Mockito.any()))
         .thenReturn(
-            "OTP to reset your password on $installationName is $otp. This is valid for $otpExpiryInMinutes minutes only.");
+            "OTP to verify your mobile number for Shikshagraha is $otp. This OTP is valid for $otpExpiryInMinutes minutes. -Powered by Tekdi Technologies");
     subject.tell(request, probe.getRef());
     Response response = probe.expectMsgClass(duration("30 second"), Response.class);
     Assert.assertEquals(ResponseCode.OK, response.getResponseCode());
